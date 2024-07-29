@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    font-family: poppins;
+}
+
+.sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    padding-left: 1rem;
+    background-color: #f8f9fa;
+  }
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+    .content {
+      margin-left: 0;
+      
+    }
+   
+  }
+  @media (min-width: 768px) {
+    .navbar-toggler {
+      display: none;
+    }
+  }
+  .navbar-toggler {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
