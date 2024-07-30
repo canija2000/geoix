@@ -2,7 +2,18 @@
 
 <section class="container mt-5">
   <div class="row">
-    <h2 class="col-4 ms-4">{{name}}</h2>
-     <div id="graph" class="col-6" style="height:fit-content;"></div>
+    <h2 class=" ms-4 text-center pb-4 ">{{name}}</h2>
+    <hr class="m-auto col-8 ">
+     <div class="p-5" style="text-align:justify">{{description}}
+
+
+      <ul class="mt-4">
+      {{#each indicators}}
+      <li class="m-2"> <a href="/{{route}}">  {{name}} </a> </li>
+      {{/each}}
+      </ul>
+     </div>
+
+     
     
   </div>

@@ -4,6 +4,11 @@ node_modules/
 # Ignore npm debug log
 npm-debug.log
 
+
+# Ignore log files
+*.log
+.DS_Store
+
 # Ignore yarn.lock file
 yarn.lock
 

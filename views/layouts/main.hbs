@@ -44,7 +44,7 @@
       <nav class="nav flex-column">
         <a class="nav-link active" href="/">Home</a>
         {{#each items}}
-        <a class="nav-link" href="/{{this}}">{{this}}</a>
+        <a class="nav-link" href="/{{route}}"> {{name}}</a>
         {{/each}}
         <a class="nav-link" href="/contact">Contact</a>
       </nav>
@@ -55,8 +55,8 @@
     <nav class="nav flex-column">
       <h2 class="p-2 mt-4 mb-4 nav-title">GeoIX</h2>
       <a class="nav-link active mt-4" href="/">Home</a>
-      {{#each items}}
-      <a class="nav-link" href="/{{this}}">{{this}}</a>
+      {{#each routes }}
+      <a class="nav-link" href="/{{path}}">{{name}}</a>
       {{/each}}
       <a class="nav-link" href="/contact">Contact</a>
     </nav>
@@ -79,33 +79,7 @@
   <!-- plotly.js -->
    <script src="https://cdn.plot.ly/plotly-2.34.0.min.js" charset="utf-8"></script>
 
-  <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('DOM loaded with JavaScript');
-            const data = JSON.parse('{{{data}}}')
-            const series = data.series.map(s => ({
-                x: new Date(s.timestamp),
-                y: s.value,
-                type: 'scatter',
-                mode: 'lines+markers',
-                name: `Series ${s.index_id}`
-        }));
-
-        const plotData = [{
-                x: series.map(point => point.x), // Extract x values (timestamps)
-                y: series.map(point => point.y), // Extract y values (values)
-                type: 'scatter',
-                mode: 'lines+markers',
-                name: `Series ${data.index_id}`
-            }];
-       
-
-        Plotly.newPlot('graph', plotData);
-
-    });
-
-  </script>
- 
+  
 </body>
 
 </html>

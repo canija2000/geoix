@@ -12,9 +12,14 @@ const __dirname = path.dirname(__filename);
 const app = express()
 const PORT = 3000
 
+
 // Set up Handlebars
 app.engine('hbs', engine({ defaultLayout: 'main' , extname: 'hbs' }));
 app.set('view engine', 'hbs');
+app.use(express.urlencoded({ extended: true }));
+
+//JSON
+app.use(express.json())
 
 // Set the views directory
 app.set('views', path.join(__dirname, 'views'));
